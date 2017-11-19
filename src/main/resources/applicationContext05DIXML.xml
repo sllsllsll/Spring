@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+<bean id="car" class="cn.happy.spring05.Car">
+    <property name="brand" value="大众"></property>
+    <property name="color" value="pink"></property>
+</bean>
+<bean id="stu" class="cn.happy.spring05.Student">
+    <constructor-arg name="name" value="苏苏"></constructor-arg>
+    <constructor-arg index="1" value="18"></constructor-arg>
+    <constructor-arg index="2" ref="car"></constructor-arg>
+</bean>
+    <bean id="stu2" class="cn.happy.spring05.Student" p:name="哈哈" p:age="20" p:car-ref="car"></bean>
+    <bean id="array" class="cn.happy.spring05.Coll">
+        <property name="names">
+            <array>
+            <value>苏苏1</value>
+                <value>苏苏2</value>
+            </array>
+        </property>
+    </bean>
+    <bean id="list" class="cn.happy.spring05.Coll">
+    <property name="list">
+        <list>
+            <value>苏苏1</value>
+            <value>苏苏2</value>
+        </list>
+    </property>
+</bean>
+    <bean id="set" class="cn.happy.spring05.Coll">
+        <property name="set">
+            <set>
+                <value>苏苏1</value>
+                <value>苏苏2</value>
+            </set>
+        </property>
+    </bean>
+
+    <bean id="map" class="cn.happy.spring05.Coll">
+    <property name="map">
+        <map>
+            <entry key="001" value="hh"></entry>
+            <entry key="002" value="呵呵"></entry>
+            <entry key="003">
+                <value>啦啦啦</value>
+            </entry>
+        </map>
+    </property>
+</bean>
+
+    <bean id="properties" class="cn.happy.spring05.Coll">
+        <property name="properties">
+           <props>
+               <prop key="001">离开集合个</prop>
+               <prop key="002">呵呵</prop>
+               <prop key="003">离开个</prop>
+
+           </props>
+        </property>
+    </bean>
+</beans>

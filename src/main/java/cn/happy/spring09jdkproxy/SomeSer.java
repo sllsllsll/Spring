@@ -1,0 +1,10 @@
+package cn.happy.spring09jdkproxy;
+
+/**
+ * Created by linlin on 2017/7/31.
+ */
+public class SomeSer implements ISome{
+    public String str() {
+        return "呵呵";
+    }
+}

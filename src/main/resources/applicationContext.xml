@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--第一个案例-->
+    <bean id="someService" class="cn.happy.spring01.SomeService"></bean>
+    <!--域属性-->
+    <bean id="car" class="cn.happy.spring02.Car">
+<property name="brand" value="大众"></property>
+        <property name="color" value="粉色"></property>
+    </bean>
+    <bean id="stu" class="cn.happy.spring02.Student">
+        <property name="name" value="苏苏"></property>
+        <property name="age" value="21"></property>
+        <property name="car" ref="car"></property>
+    </bean>
+
+    <!--墨盒-->
+    <bean id="a4paper" class="cn.happy.spring03.paper.A4Paper"></bean>
+
+<bean id="colorink" class="cn.happy.spring03.Ink.ColorInk"></bean>
+
+<bean id="pp" class="cn.happy.spring03.printer.Print">
+    <property name="p" ref="a4paper"></property>
+<property name="ink" ref="colorink"></property>
+</bean>
+</beans>
